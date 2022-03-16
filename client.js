@@ -13,8 +13,16 @@ const connect = function () {
   conn.on('connect', () => {
     conn.write('Name: KL1');
     console.log('your snek is on the board');
-  });
 
+    setInterval(() => {
+      //conn.write('Move: up');
+    }, 50);
+    
+    setTimeout(() => {
+      clearInterval();
+    }, 200);
+
+  });
 
   conn.on('data', (test) => {
     console.log(test);
