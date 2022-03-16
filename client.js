@@ -11,8 +11,10 @@ const connect = function () {
   conn.setEncoding("utf8"); 
 
   conn.on('connect', () => {
+    conn.write('Name: KL1');
     console.log('your snek is on the board');
   });
+
 
   conn.on('data', (test) => {
     console.log(test);
